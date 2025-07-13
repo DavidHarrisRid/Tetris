@@ -223,9 +223,11 @@ class Tetris:
                             self.lock()
                         last_move[pygame.K_DOWN]=now
                     elif e.key==pygame.K_a:
-                        self.rotate(-1)
-                    elif e.key==pygame.K_d:
+                        # Swapped rotation direction: 'a' now rotates clockwise
                         self.rotate(1)
+                    elif e.key==pygame.K_d:
+                        # Swapped rotation direction: 'd' now rotates counter-clockwise
+                        self.rotate(-1)
                     elif e.key==pygame.K_q:
                         return
             keys=pygame.key.get_pressed()
