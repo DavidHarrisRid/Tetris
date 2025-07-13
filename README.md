@@ -2,9 +2,11 @@
 
 This is a simple Tetris game implemented in Python using the `pygame` library. The project provides a single `Tetris.py` file that contains the game.
 
-## Installation
+The second file is a browser-based HTML Tetris game that runs without any installation.
 
-Before running the game you must install `pygame`.
+## Installation for PyGame
+
+Before running the Python game you must install `pygame`.
 
 ```bash
 py -m pip install pygame
