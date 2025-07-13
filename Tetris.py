@@ -26,22 +26,6 @@ CLIMB_VISIBLE = 20
 CLIMB_JUMP = 4
 CLIMB_TICK = 0.05
 
-PAC_TICK = 0.2
-PAC_LAYOUT = [
-    "####################",
-    "#P.......##........#",
-    "#.####.#.##.#.####.#",
-    "#.#....G.....#.#.#.#",
-    "#.#.##########.#.#.#",
-    "#.#............#.#.#",
-    "#.####.######.####.#",
-    "#........##........#",
-    "####################",
-]
-PAC_HEIGHT = len(PAC_LAYOUT)
-PAC_WIDTH = len(PAC_LAYOUT[0])
-
-
 def draw_text(surface, text, x, y, color=WHITE):
     img = FONT.render(text, True, color)
     surface.blit(img, (x, y))
@@ -204,8 +188,8 @@ class Tetris:
         clock=pygame.time.Clock()
         last_move={pygame.K_LEFT:0,pygame.K_RIGHT:0,pygame.K_DOWN:0}
         MOVE_INTERVAL=0.15
-        LR_INTERVAL=MOVE_INTERVAL/1.2
-        DOWN_INTERVAL=MOVE_INTERVAL/3  # 1.5× faster drop when holding down
+        LR_INTERVAL=MOVE_INTERVAL/1.3
+        DOWN_INTERVAL=MOVE_INTERVAL/3.5  # 1.5× faster drop when holding down
         while not self.game_over:
             now=time.time()
             for e in pygame.event.get():
@@ -222,11 +206,11 @@ class Tetris:
                         if not self.move(0,1):
                             self.lock()
                         last_move[pygame.K_DOWN]=now
-                    elif e.key==pygame.K_a:
-                        # Swapped rotation direction: 'a' now rotates clockwise
-                        self.rotate(1)
                     elif e.key==pygame.K_d:
-                        # Swapped rotation direction: 'd' now rotates counter-clockwise
+                        # rotation direction: 'd' rotates clockwise
+                        self.rotate(1)
+                    elif e.key==pygame.K_a:
+                        # rotation direction: 'a' rotates counter-clockwise
                         self.rotate(-1)
                     elif e.key==pygame.K_q:
                         return
@@ -253,9 +237,6 @@ class Tetris:
                     waiting=False
             clock.tick(30)
 
-
-
-# Remaining games would be similarly converted using pygame.
 
 
 def start_menu():
