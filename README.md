@@ -1,6 +1,6 @@
 # Tetris
 
-This is a simple Tetris game implemented in Python using the `pygame` library. The project provides a single `Tetris.py` file that contains the game.
+This is a simple Tetris game implemented in Python using the `pygame` library.
 
 The second file is a browser-based HTML Tetris game that runs without any installation.
 
