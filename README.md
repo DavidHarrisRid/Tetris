@@ -1,0 +1,33 @@
+# Tetris
+
+This is a simple Tetris game implemented in Python using the `pygame` library. The project provides a single `Tetris.py` file that contains the game.
+
+## Installation
+
+Before running the game you must install `pygame`.
+
+```bash
+py -m pip install pygame
+```
+
+Alternatively use `python3 -m pip install pygame` if the `py` launcher is not available.
+
+## Running the Game
+
+From the project directory execute:
+
+```bash
+py Tetris.py
+```
+
+This will open a window with the Tetris start menu. Use the arrow keys to navigate and press `Enter` to start.
+
+## Controls
+
+- `Left` / `Right` – Move the piece horizontally
+- `Down` – Soft drop (faster fall)
+- `A` – Rotate piece clockwise
+- `D` – Rotate piece counter-clockwise
+- `Q` – Quit to main menu
+
+Enjoy!
